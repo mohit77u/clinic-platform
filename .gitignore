@@ -1,0 +1,10 @@
+node_modules
+dist
+.env
+*.tsbuildinfo
+uploads
+private
+backups
+.env.local
+.next
+.playwright-mcp

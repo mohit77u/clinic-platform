@@ -1,0 +1,16 @@
+[Unit]
+Description=Clinic Platform API
+After=network.target postgresql.service redis-server.service
+
+[Service]
+WorkingDirectory=/srv/clinic-platform/backend
+EnvironmentFile=/srv/clinic-platform/backend/.env
+Environment=NODE_ENV=production
+ExecStart=/usr/bin/node dist/main.js
+Restart=always
+RestartSec=3
+User=clinic
+# private/ (KYC documents, invoices) and uploads/ must be writable by this user and backed up with the database
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafb;
+  --foreground: #12202b;
+  --muted: #5b6b78;
+  --border: #dbe3e8;
+  --card: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-brand-50: #effaf8;
+  --color-brand-100: #d4f2ec;
+  --color-brand-500: #14a38f;
+  --color-brand-600: #0f8676;
+  --color-brand-700: #0d6b5f;
+  --color-brand-900: #0a3d37;
+  --font-sans: var(--font-geist-sans), var(--font-deva), system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0d1519;
+    --foreground: #e8eef1;
+    --muted: #93a4af;
+    --border: #25343c;
+    --card: #131e24;
+  }
+}
+
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
+
+/* big, thumb-friendly tap targets on phones */
+@media (pointer: coarse) { button, [role="button"], a.btn { min-height: 44px; } }
+:focus-visible { outline: 2px solid var(--color-brand-500); outline-offset: 2px; }

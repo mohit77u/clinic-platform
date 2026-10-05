@@ -1,0 +1,15 @@
+[Unit]
+Description=Clinic Platform Web (Next.js)
+After=network.target
+
+[Service]
+WorkingDirectory=/srv/clinic-platform/frontend
+EnvironmentFile=/srv/clinic-platform/frontend/.env.local
+Environment=NODE_ENV=production
+ExecStart=/usr/bin/npx next start -p 3000
+Restart=always
+RestartSec=3
+User=clinic
+
+[Install]
+WantedBy=multi-user.target
